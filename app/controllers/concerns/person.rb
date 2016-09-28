@@ -4,25 +4,38 @@ class Person
   def initialize(name, age)
     @name = name
     @age = age
+    @nickname = name[0, 4]
   end
 
   def nickname
     # YOUR IMPLEMENTATION HERE
-    'nickname'
+    @nickname
   end
 
   def birth_year
     # YOUR IMPLEMENTATION HERE
-    1990
+    2000 - (@age.to_i - 16)
+
   end
 
   def introduction
     # YOUR IMPLEMENTATION HERE
-    'introduce'
+    "Hi, my name is %{a} and I am %{b} years old!" % {a: @name, b: @age}
   end
 
   def fib_number
     # YOUR IMPLMENTATION HERE
-    0
+    copy = @age.to_i
+    fib_helper(copy)
+
   end
+
+  def fib_helper(num)
+    if num == 0 or num == 1
+      num
+    else
+      fib_helper(num - 1) + fib_helper(num - 2)
+    end
+  end
+
 end
