@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     #sat to dat, and then from dat to sat
   end
 
-  def stringifyrails
+  def stringify
     stringify_instance = Stringify.new(
       params[:name],
       params[:adjective]
